@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1></h1>
+    {% if notfound %}
+        <h2>{{notfound}}</h2>
+    {% else %}
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{username.avatar_url}}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{username.name}}</h5>
+          <p class="card-text">ID:{{username.id}}</p>
+          <p class="card-text">Location:{{username.location}}</p>
+          <p class="card-text">Public_repos:{{username.public_repos}}</p>
+          <p class="card-text">Followers:{{username.followers}}</p>
+          <p class="card-text">Following:{{username.following}}</p>
+          <p class="card-text">Created_at:{{username.created_at}}</p>
+         
+          <a href={{username.html_url}} class="btn btn-primary">Visit</a>
+        </div>
+        <section style="text-align:center;">
+          <form action="http://127.0.0.1:8000/">
+              <button type="submit">Click me to home</button>
+           </form>
+        </section>
+      </div>
+    {% endif %}
+    
+{% endblock %}

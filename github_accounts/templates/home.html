@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Hello Developers!</h1>
+    <p class="lead">There are all smart guys.</p>
+  </div>
+</div>
+    <div class="container">
+      <div class="row">
+        {% for x in api %} 
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{x.avatar_url}}" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{x.login}}</h5>
+              <p class="card-text">{{x.login}}'s Github</p>
+              <a href={{x.html_url}} class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+          <br>
+       </div>
+       {% endfor %}
+     </div>
+    </div>
+
+
+
+
+{% endblock %}
